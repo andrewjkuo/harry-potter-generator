@@ -25,3 +25,9 @@ _________________________________________________________________
 ```
 ### Usage
 All of my results can be reproduced by running the notebooks in this repository. The txt_generator.ipynb notebook can be used to try out my pre-trained model and generate new text. If you would like to train the model again from scratch you can use the train_model.ipynb notebook.
+
+### Models
+There are a number of different pre-trained models included in this repository. The 070520 model is used by default in the txt_generator notebook as I believe it produces the best results. Feel free to try any of the other models. Unfortunately I didn't keep track of all the hyperparameter settings other than number of training epochs:
+* 030520: 28 epochs (early stopping on validation loss was used)
+* 070520: 178 epochs (intentionally overfit)
+* 080520: 250 epochs (intentionally overfit)
