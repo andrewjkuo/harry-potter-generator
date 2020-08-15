@@ -3,8 +3,8 @@
 ### About
 This is a Transformer neural network model for generating new Harry Potter content. I trained the model on the entire book series and it can now produce completely new text in the style of J.K. Rowling. It probably isn’t quite good enough to fool an attentive reader but it has captured a lot of the writing style and vocabulary of these famous books.
 
-### Demo
-TBC
+### [Demo](https://dr00bot.com/projects/ai-rowling)
+
 
 ### Transformer Model
 This model was trained using Max Woolf's fantastic gpt2_simple python package. It uses the pre-trained 124M GPT-2 model as a starting point and is then finetuned on text from the Harry Potter books. The model itself is large and so not stored in this repository but it can be re-trained using the "2-transformer-model/train_transformer_model.ipynb" notebook. The gpt2_simple package currently doesn't work with tensorflow 2.0 and so you should probably use a virtual environment (with dependencies in requirements.txt installed) to run this notebook.
