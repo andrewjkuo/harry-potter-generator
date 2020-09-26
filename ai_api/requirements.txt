@@ -2,4 +2,4 @@ Flask==1.1.2
 Flask-Cors==3.0.8
 gunicorn
 gpt-2-simple==0.7.1
-tensorflow==1.13.1
+tensorflow==1.15.4
