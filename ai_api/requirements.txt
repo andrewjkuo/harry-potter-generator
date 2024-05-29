@@ -1,5 +1,5 @@
-Flask==1.1.2
-Flask-Cors==3.0.8
-gunicorn
-gpt-2-simple==0.7.1
-tensorflow==1.13.1
+Flask==2.2.2
+Flask-Cors==4.0.1
+gpt-2-simple==0.8.1
+tensorflow==2.16.1
+Werkzeug==2.2.2

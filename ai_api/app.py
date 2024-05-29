@@ -9,17 +9,13 @@ class GptModel:
   def __init__(self):
     self.sess = gpt2.start_tf_sess()
     gpt2.load_gpt2(self.sess, run_name='run1')
-    self.graph = tf.get_default_graph()
+    self.graph = tf.compat.v1.get_default_graph()
 
   def predict(self, prefix):
     print('pred working')
     with self.graph.as_default():
       txt = gpt2.generate(self.sess, run_name='run1', length=150, prefix=prefix, return_as_list=True)[0]
 
-    # reload model after each prediction (to avoid memory leak bug)
-    self.sess = gpt2.reset_session(self.sess)
-    gpt2.load_gpt2(self.sess, run_name='run1')
-    self.graph = tf.get_default_graph()
     return txt
 
 gptmodel = GptModel()
@@ -28,8 +24,8 @@ CORS(app)
 
 @app.route('/')
 def hello_world():
-    target = os.environ.get('TARGET', 'World')
-    return 'Hello Worldy'
+  target = os.environ.get('TARGET', 'World')
+  return 'Hello Worldy'
 
 @app.route('/v1/gpt2', methods=['POST'])
 def gpt2_model():
@@ -39,4 +35,5 @@ def gpt2_model():
   return txt
 
 if __name__ == "__main__":
-  app.run(host='0.0.0.0', port=5000, threaded=False)
+  port = int(os.environ.get('PORT', 8080))
+  app.run(host='0.0.0.0', port=port)
